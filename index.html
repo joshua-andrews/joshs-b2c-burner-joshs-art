@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh — Digital Fine Art Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ececec;
+            --text: #1a1a1a;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; cursor: crosshair; }
+        
+        /* Glassmorphism Header */
+        header { position: fixed; top: 0; left: 0; width: 100%; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(236, 236, 236, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .logo { font-weight: 500; letter-spacing: -0.5px; font-size: 1.2rem; }
+        .logo span { font-weight: 200; color: #666; }
+        .nav-links a { margin-left: 40px; text-decoration: none; color: var(--text); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--text); transition: width 0.3s ease; }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* Masonry Grid */
+        main { padding: 140px 40px 100px; max-width: 1800px; margin: 0 auto; }
+        .hero-statement { font-size: 2.8rem; font-weight: 200; line-height: 1.2; max-width: 900px; margin-bottom: 80px; letter-spacing: -1px; }
+        
+        .masonry { column-count: 3; column-gap: 30px; }
+        @media(max-width: 1200px) { .masonry { column-count: 2; } }
+        @media(max-width: 768px) { .masonry { column-count: 1; } }
+
+        .art-piece { break-inside: avoid; margin-bottom: 30px; position: relative; overflow: hidden; background: #ddd; }
+        .art-piece img { width: 100%; display: block; filter: contrast(1.1); transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), filter 0.5s; }
+        
+        .art-overlay { position: absolute; inset: 0; background: rgba(26,26,26,0.85); display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.4s ease; color: white; text-align: center; padding: 20px; }
+        .art-overlay h3 { font-weight: 300; font-size: 1.4rem; letter-spacing: 1px; margin-bottom: 10px; transform: translateY(20px); transition: transform 0.4s ease; }
+        .art-overlay p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #aaa; transform: translateY(20px); transition: transform 0.4s ease 0.05s; }
+
+        .art-piece:hover img { transform: scale(1.05); }
+        .art-piece:hover .art-overlay { opacity: 1; }
+        .art-piece:hover .art-overlay h3, .art-piece:hover .art-overlay p { transform: translateY(0); }
+
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: #888; letter-spacing: 1px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">JOSH <span>ART</span></div>
+        <div class="nav-links">
+            <a href="#">Index</a>
+            <a href="#">Exhibitions</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-statement">
+            Exploring the visual weight of form and negative space through digital abstraction and geometric composition.
+        </div>
+
+        <div class="masonry">
+            <div class="art-piece">
+                <img src="https://loremflickr.com/800/1200/abstract,painting?lock=61" alt="Artwork 1">
+                <div class="art-overlay">
+                    <h3>Chromatic Shift No. 4</h3>
+                    <p>Digital Print, 2026</p>
+                </div>
+            </div>
+            <div class="art-piece">
+                <img src="https://loremflickr.com/800/1200/geometric,art?lock=62" alt="Artwork 2">
+                <div class="art-overlay">
+                    <h3>Liquid Geometry</h3>
+                    <p>Algorithm & Raster, 2025</p>
+                </div>
+            </div>
+            <div class="art-piece">
+                <img src="https://loremflickr.com/800/1200/digital,art?lock=63" alt="Artwork 3">
+                <div class="art-overlay">
+                    <h3>Monolith Ascent</h3>
+                    <p>Mixed Digital, 2026</p>
+                </div>
+            </div>
+            <div class="art-piece">
+                <img src="https://loremflickr.com/800/1200/modern,art?lock=64" alt="Artwork 4">
+                <div class="art-overlay">
+                    <h3>Particle Decay</h3>
+                    <p>Canvas & Vector, 2025</p>
+                </div>
+            </div>
+            <div class="art-piece">
+                <img src="https://loremflickr.com/800/1200/contemporary,art?lock=65" alt="Artwork 5">
+                <div class="art-overlay">
+                    <h3>Negative State</h3>
+                    <p>Installation Concept, 2026</p>
+                </div>
+            </div>
+            <div class="art-piece">
+                <img src="https://loremflickr.com/800/1200/sculpture,art?lock=66" alt="Artwork 6">
+                <div class="art-overlay">
+                    <h3>Resonant Frequency</h3>
+                    <p>Digital Print, 2026</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Josh's Art Studio. Visual Arts Portfolio.
+    </footer>
+</body>
+</html>
